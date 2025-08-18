@@ -203,6 +203,7 @@ nav a:hover {
     }
       .sec2 {
         gap: 30px;
+      padding: 50px 20px !important;
       }
       .sec2 .stat-item {
         flex: 0 0 calc(50% - 20px);
@@ -302,6 +303,9 @@ background: linear-gradient(90deg, #D1313E 27.49%, #364D8D 50%);
     
   }
 @media (max-width:768px) {
+   .sec4  {
+    padding: 0 !important;
+   }
    .sec4-text h2 {
     font-size: 24px;
     text-align: center;
@@ -322,6 +326,9 @@ background: linear-gradient(90deg, #D1313E 27.49%, #364D8D 50%);
     .sec4-img:last-child {
       order: 3;
     }
+     .gallery-sec {
+   padding: 10px !important;
+  }
   }
   /* GALLARY SECTION */
     .gallery-sec {
@@ -621,16 +628,19 @@ background: linear-gradient(90deg, #D1313E 27.49%, #364D8D 50%);
   }
   .awards-section {
     background:#333333;
-    padding: 0;
+    padding: 10px !important;
     color: white;
 }
-
+.awards-section {
+  padding: 0 !important;
+}
 }
 
 /* AWARD SECTION */
+
 .awards-section {
     background:#333333;
-    padding: 50px 20px;
+    
     color: white;
 }
 
@@ -718,10 +728,14 @@ align-items: start;
     
      padding: 0 !important;
 }
+.sec8 {
+  
+padding: 10px !important;
+}
 }
 /* SECTION 8 */
 .sec8 {
-  padding: 50px 20px;
+  
   background:#1e1e1e;
   color: #fff;
 }
@@ -885,7 +899,7 @@ text-align: center;
 /* PARTNERSHIP SECTION */
 .partnership {
     background:white;
-    padding: 50px 20px;
+    padding: 50px 50px;
     color: white;
 }
 
@@ -942,6 +956,10 @@ text-align: center;
 
 /* Mobile view - slider mode */
 @media (max-width: 768px) {
+  .partnership {
+    padding: 10px;
+  }
+
     .partnership-slider {
        
         gap: 20px;
@@ -985,7 +1003,7 @@ text-align: center;
 /* PARTNERSHIP SECTION */
 .career {
     background:white;
-    padding: 50px 20px;
+    padding: 50px 50px;
     color: white;
 }
 
@@ -1033,6 +1051,11 @@ text-align: center;
 
 /* Mobile view - slider mode */
 @media (max-width: 768px) {
+  .career {
+    background:white;
+    padding: 10px;
+    color: white;
+}
     .career-slider {
       
         gap: 20px;
@@ -1043,8 +1066,11 @@ text-align: center;
     text-align: center !important;
    }
 
-   .career-content .career-text h2 {
-      text-align: center;
+   .Career .Career-text h2 {
+
+   }
+   .Career .Career-text h2{
+      text-align: center !important;
         padding:0 !important;
         font-size: 33px;
         font-weight: bold;
@@ -1365,7 +1391,7 @@ font-weight: bold;
 
 
 .programs-sec {
-  padding: 60px 5%;
+  padding: 50px 100px;
   background: #fff;
   font-family: Arial, sans-serif;
   position: relative;
@@ -1433,6 +1459,9 @@ font-weight: bold;
   gap: 25px;
 }
 @media (max-width:768px) {
+  .programs-sec {
+    padding: 50px 20px;
+  }
   .programs-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* Always 3 cards in a row */
@@ -1707,11 +1736,18 @@ height: 100% !important;
 
   @media(max-width: 768px) {
     .slide { flex: 0 0 calc(50% - 10px); } /* 2 per row mobile */
+  
+  .insd-spotlight {
+    padding: 0 !important;
+  }
+  .sec7{
+    padding: 0 !important;
+  }
   }
 
 
   .insd-spotlight {
-    padding: 50px 5%;
+   
     background: #fff;
     font-family: Arial, sans-serif;
   }
@@ -1793,7 +1829,7 @@ height: 100% !important;
 .three-img-slider {
   background: #1e1e1e;
   color: #fff;
-  padding: 50px 20px;
+  padding: 0 !important;
   text-align: center;
 }
 
@@ -1861,7 +1897,7 @@ height: 100% !important;
 }
 
   .insd-brand {
-    padding: 50px 5%;
+padding: 50px 125px;
     background: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -1928,6 +1964,9 @@ height: 100% !important;
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
+     .insd-brand {
+      padding:10px;
+     }
     .insd-brand-card {
       flex: 0 0 100%; /* Mobile: 1 card at a time */
     }
@@ -1958,6 +1997,10 @@ height: 100% !important;
 .enquire-btn:hover {
   background: linear-gradient(180deg, #b71c1c, #2c4db0);
 }
+
+
+
+
 
 
 
