@@ -7,10 +7,10 @@ const desktopImages = [
 ];
 
 const mobileImages = [
-    "/assets/images/mob4.png",
-    "/assets/images/mob3.png",
-    "/assets/images/mob2.png",
-    "/assets/images/mob1.png"
+    "/assets/images/mobile4.png",
+    "/assets/images/mobile3.png",
+    "/assets/images/mobile2.png",
+    "/assets/images/mobile1.png"
     
 ];
 
