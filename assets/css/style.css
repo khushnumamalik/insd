@@ -45,6 +45,10 @@
     .sec1 {
         height: 600px;
     }
+    .programs-text{
+        text-align:center !important;
+    }
+
 }
 /* HEDER SECTION */
 .header {
