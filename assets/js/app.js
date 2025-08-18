@@ -7,10 +7,10 @@ const desktopImages = [
 ];
 
 const mobileImages = [
-    "/assets/images/mobile4.png",
-    "/assets/images/mobile3.png",
-    "/assets/images/mobile2.png",
-    "/assets/images/mobile1.png"
+    "/assets/images/mob4.png",
+    "/assets/images/mob3.png",
+    "/assets/images/mob2.png",
+    "/assets/images/mob1.png"
     
 ];
 
@@ -114,6 +114,62 @@ function toggleMenu() {
     galleryGrid.scrollBy({ left: -300, behavior: 'smooth' });
   });
 
+  // Gallery Lightbox
+  (function () {
+    const grid = document.querySelector('.gallery-grid');
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const btnClose = document.getElementById('lightboxClose');
+    const btnPrev = document.getElementById('lightboxPrev');
+    const btnNext = document.getElementById('lightboxNext');
+    if (!grid || !lightbox || !lightboxImg) return;
+
+    const images = Array.from(grid.querySelectorAll('img'));
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex].src;
+      lightbox.classList.add('open');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      lightboxImg.src = '';
+    }
+
+    function show(delta) {
+      currentIndex = (currentIndex + delta + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    images.forEach((img, idx) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => openLightbox(idx));
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') openLightbox(idx);
+      });
+      img.setAttribute('tabindex', '0');
+    });
+
+    btnClose && btnClose.addEventListener('click', closeLightbox);
+    btnPrev && btnPrev.addEventListener('click', () => show(-1));
+    btnNext && btnNext.addEventListener('click', () => show(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') show(-1);
+      if (e.key === 'ArrowRight') show(1);
+    });
+  })();
+
 //   AWARD SECTION
 
     const awardsSlider = document.querySelector(".awards-slider");
@@ -170,4 +226,65 @@ document.querySelectorAll('.slider-container1').forEach(slider => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // Explore Our Programs: scroll reveal for heading and cards
+  (function () {
+    const revealElements = [
+      ...document.querySelectorAll('.programs-sec .text-container'),
+      ...document.querySelectorAll('.programs-sec .program-card')
+    ];
+
+    if (!revealElements.length) return;
+
+    const programsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // add slight stagger using transitionDelay
+          const elementIndex = revealElements.indexOf(entry.target);
+          entry.target.style.transitionDelay = `${Math.min(elementIndex * 80, 400)}ms`;
+          entry.target.classList.add('in-view');
+          programsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach((el) => {
+      el.classList.add('reveal');
+      programsObserver.observe(el);
+    });
+  })();
+
+  // Subtle 3D tilt for program media (image only) on pointer devices
+  (function () {
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canHover) return;
+
+    const cards = document.querySelectorAll('.programs-sec .program-media');
+    const maxTilt = 8; // degrees
+
+    cards.forEach((card) => {
+      const handleMove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const relX = e.clientX - rect.left;
+        const relY = e.clientY - rect.top;
+        const pctX = (relX / rect.width) * 2 - 1; // -1 to 1
+        const pctY = (relY / rect.height) * 2 - 1; // -1 to 1
+        const tiltX = -(pctY * maxTilt);
+        const tiltY = pctX * maxTilt;
+        card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      };
+
+      const reset = () => {
+        card.style.transform = '';
+      };
+
+      card.addEventListener('mousemove', handleMove);
+      card.addEventListener('mouseleave', reset);
+    });
+  })();
+
+  // Sec4 reveal removed (undo)
+
+
+  
 
