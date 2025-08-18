@@ -45,10 +45,6 @@
     .sec1 {
         height: 600px;
     }
-    .programs-text{
-        text-align:center !important;
-    }
-
 }
 /* HEDER SECTION */
 .header {
@@ -211,6 +207,23 @@ nav a:hover {
         display: none;
       }
     }
+    
+@media (max-width: 480px){
+        .sec2 .stat-number {
+      font-size: 2.3rem;
+      font-weight: bold;
+    
+    }
+      .sec2 {
+        gap: 30px;
+      }
+      .sec2 .stat-item {
+        flex: 0 0 calc(50% - 20px);
+      }
+      .sec2 .stat-item:not(:last-child)::after {
+        display: none;
+      }
+}
     /* NATURE SETION */
       .container {
     max-width: 1300px;
@@ -960,7 +973,9 @@ text-align: center;
             padding: 0 !important;
              grid-template-columns: repeat(3, 1fr) !important;
     }
-   
+   .programs-text{
+    text-align: center !important;
+   }
 
     .career-text h2 {
       text-align: center;
@@ -1010,7 +1025,6 @@ text-align: center;
 
 /* Left Section */
 .footer-left {
-  flex: 1;
   min-width: 250px;
   margin-bottom: 20px;
 }
@@ -1077,7 +1091,7 @@ text-align: center;
   text-decoration: none;
   line-height: 3;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 20px !important;
 }
 
 .footer-links ul li a:hover {
@@ -1109,7 +1123,7 @@ margin-top: -50px;
 
 .btn-outline {
   display: inline-block;
-    padding: 15px 20px ;
+ padding: 15px 60px;
   border: 1px solid #fff;
   color: #fff;
   border-radius: 4px;
@@ -1127,7 +1141,7 @@ margin-top: -50px;
 /* ✅ Responsive Breakpoints */
 @media (max-width: 992px) {
   .footer-links ul li a {
-    font-size: 16px;
+    font-size: 14px !important;
   }
 
   .btn-gradient,
@@ -1162,7 +1176,7 @@ margin-top: -50px;
     width: 80%;
   }
   .footer-links {
-  flex: 1;
+
   min-width: 180px;
   margin-bottom: 20px;
 
@@ -1181,6 +1195,8 @@ margin-top: -50px;
   line-height: 3;
   font-weight: 300;
   font-size: 18px;
+  text-align: start;
+  
 }
 
 .footer-links ul li a:hover {
@@ -1218,6 +1234,7 @@ justify-items: center !important;
   .footer-links ul li a {
     font-size: 14px;
     line-height: 2.2;
+    text-align: start;
   }
 
   .btn-gradient,
@@ -1486,6 +1503,7 @@ height: 75% !important;
   .insd-btn:hover {
    background: linear-gradient(180deg, #9b111e, #1f3c88); /* Red to Blue gradient */
     color: #fff;
+       border: 2px solid #fff !important;
   }
 
   /* Mobile Responsive */
