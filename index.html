@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts Link -->
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <!-- HEADER SECTION -->
- <section class="sec3">
-  <div class="header">
+  <!-- HEADER SECTION -->
+<section class="sec3">
+  <div class="header" id="header" style="padding: 20px 100px;">
     <div class="logo">
       <img src="assets/images/logo.webp" alt="NSD Logo">
     </div>
@@ -16,45 +19,274 @@
     <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
     <nav id="nav-menu">
       <div class="dropdown">
-        <a href="#">About Us ▼</a>
-        <div class="dropdown-content">
-          <a href="#">Our Story</a>
-          <a href="#">Team</a>
-        </div>
+        <a href="#">About Us </a>
+       
       </div>
       <div class="dropdown">
-        <a href="#">Courses ▼</a>
-        <div class="dropdown-content">
-          <a href="#">Design</a>
-          <a href="#">Fashion</a>
-        </div>
+        <a href="#">Courses </a>
+        
       </div>
       <a href="#">Campuses</a>
       <a href="#">Student Careers</a>
       <div class="dropdown">
-        <a href="#">INSD 360 ▼</a>
-        <div class="dropdown-content">
-          <a href="#">Virtual Tour</a>
-        </div>
+        <a href="#">INSD 360 </a>
+      
       </div>
       <a href="#">Apply</a>
       <a href="#">Franchise</a>
       <div class="dropdown">
-        <a href="#">Contact Us ▼</a>
-        <div class="dropdown-content">
-          <a href="#">Email</a>
-          <a href="#">Locations</a>
-        </div>
+        <a href="#">Contact Us </a>
+       
       </div>
     </nav>
   </div>
 </section>
+<style>
+  
+</style>
     <!-- HERO SECTION -->
-    <section class="sec1" style="padding: 50px 20px;">
- <div class="dots"></div>
+    <section class="sec1 banner" style="padding: 0;">
+      <!-- Radio controls -->
+      <input type="radio" name="hero" id="hero-1" checked>
+      <input type="radio" name="hero" id="hero-2">
+      <input type="radio" name="hero" id="hero-3">
+
+      <!-- Background holder -->
+      <div class="hero-bg"></div>
+
+      <!-- Content overlay (changes per banner via CSS) -->
+      <div class="hero-overlay">
+  <div class="hero-content content-1">
+    <small>30+ YEARS</small>  
+    <h1 data-title="YEARS OF SHAPING ">
+      YEARS OF SHAPING CREATIVE MINDS<br>WITH A <span> PROVEN LEGACY</span>
+    </h1>
+    <p>Empowering aspiring designers with world-class education, global exposure, and industry connections for over 13 years.</p>
+    <a href="#" class="cta-btn">Enquire Now</a>
+  </div>
+<style>
+  .cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(90deg, #D1313E 0%, #364D8D 100%);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Shine animation layer (inside effect) */
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  z-index: 2;
+  animation: shine 3s infinite;
+}
+
+/* Outside border animation */
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #D1313E, #364D8D, #D1313E);
+  z-index: -1;
+  background-size: 200% 200%;
+  animation: borderMove 4s linear infinite;
+}
+
+/* Keyframes for shine */
+@keyframes shine {
+  0% { left: -75%; }
+  50% { left: 125%; }
+  100% { left: 125%; }
+}
+
+/* Keyframes for animated border */
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover effect */
+.cta-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+</style>
+  <div class="hero-content content-2">
+    <small>WELCOME TO</small> 
+    <h1 data-title="INTERNATIONAL SCHOOL ">
+      INTERNATIONAL SCHOOL <br> OF <span>DESIGN</span>
+    </h1>
+    <p>INSD provides high-quality design programs, national & international platforms for practical exposure, and opportunities to connect with industry professionals for students to navigate the complexities of the design industry.</p>
+    <a href="#" class="cta-btn">Enquire Now</a>
+  </div>
+
+  <div class="hero-content content-3">
+    <small>75+ Centres</small>
+    <h1 data-title="Pan India 25,000+ ">
+      Pan India 25,000+ Students 7
+      <br>International <span> Partnerships</span>
+    </h1>
+    <p>With 75+ centres spread across India and 25,000+ students trained, we are shaping careers and building a strong learning community.</p>
+    <a href="#" class="cta-btn">Enquire Now</a>
+  </div>
+</div>
+
+<style>.hero-content h1 {
+  position: relative;
+  font-size: 3rem;
+  line-height: 1.3;
+  color: #fff;
+  z-index: 1;
+     font-family: 'Montserrat', sans-serif;
+}
+@media (max-width:768px) {
+  .hero-content h1 {
+
+  font-size: 1.4rem;
+  
+}
+}
+.hero-content h1::after {
+  content: attr(data-title);   /* duplicate text */
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.548);  /* light copy */
+  z-index: -1;
+  transform: translateY(0);
+  animation: floatUp 4.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-180px);
+    opacity: 0;
+  }
+}
+</style>
+      
+      <!-- Thumbnails bottom-right -->
+      <div class="hero-thumbs">
+        <label for="hero-1" class="thumb"><img src="assets/images/1.png" alt="Slide 1"></label>
+        <label for="hero-2" class="thumb"><img src="assets/images/2.png" alt="Slide 2"></label>
+        <label for="hero-3" class="thumb"><img src="assets/images/3.png" alt="Slide 3"></label>
+      </div>
     </section>
+    
+    <script>
+      // Auto slider for hero radios (no other changes elsewhere)
+      (function(){
+        const radios = [
+          document.getElementById('hero-1'),
+          document.getElementById('hero-2'),
+          document.getElementById('hero-3')
+        ];
+        let idx = 0;
+        function tick(){
+          idx = (idx + 1) % radios.length;
+          radios[idx].checked = true;
+        }
+        setInterval(tick, 5000);
+      })();
+    </script>
+    
+    <!-- Enquiry Modal -->
+    <div class="enquiry-backdrop" id="enquiryModal" aria-hidden="true">
+      <div class="enquiry-dialog" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle">
+        <div class="enquiry-hero"></div>
+        <button class="enquiry-close" id="enquiryClose" aria-label="Close">✕</button>
+        <div class="enquiry-content">
+          <h3 id="enquiryTitle">Enquire now</h3>
+          <form class="enquiry-form" id="enquiryForm">
+            <div class="enquiry-grid">
+              <input class="enquiry-input" type="text" name="name" placeholder="Name" required>
+              <input class="enquiry-input" type="email" name="email" placeholder="Email" required>
+              <input class="enquiry-input" type="tel" name="phone" placeholder="Phone" required>
+              <input class="enquiry-input" type="text" name="state" placeholder="State">
+              <input class="enquiry-input" type="text" name="city" placeholder="City">
+              <input class="enquiry-input" type="text" name="center" placeholder="INSD Center you wish to join">
+              <select class="enquiry-input" name="course">
+                <option value="">Select Course *</option>
+                <option>Fashion Design</option>
+                <option>Interior Design</option>
+                <option>Graphic Design</option>
+                <option>Animation</option>
+                <option>Jewellery Design</option>
+                <option>UI/UX</option>
+              </select>
+              <select class="enquiry-input" name="ug">
+                <option value="">Specialization under UG</option>
+                <option>Fashion</option>
+                <option>Interior</option>
+                <option>Graphics</option>
+              </select>
+              <select class="enquiry-input" name="pg">
+                <option value="">Specialization under PG</option>
+                <option>Fashion</option>
+                <option>Interior</option>
+                <option>Graphics</option>
+              </select>
+              <select class="enquiry-input" name="diploma">
+                <option value="">Specialization under Diploma</option>
+                <option>Fashion</option>
+                <option>Interior</option>
+                <option>Graphics</option>
+              </select>
+            </div>
+            <button type="submit" class="enquiry-submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Open modal from hero CTA
+      (function(){
+        const modal = document.getElementById('enquiryModal');
+        const closeBtn = document.getElementById('enquiryClose');
+        const triggers = document.querySelectorAll('.sec1 .cta-btn, .enquire-btn');
+        const form = document.getElementById('enquiryForm');
+        function open(){ modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); }
+        function close(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+        triggers.forEach(el=> el && el.addEventListener('click', (e)=>{ e.preventDefault(); open(); }));
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
+        document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+        form.addEventListener('submit', (e)=>{ e.preventDefault(); close(); });
+      })();
+    </script>
+ 
+ <section class="stats-section">
     <!-- COUNTDOWN -->
-    <section class="sec2" style="padding: 50px 20px;">
+    <section class="sec2" style="padding: 50px 80px; background-color:#111111;">
   <div class="stat-item">
     <div class="stat-number" data-target="25000">0</div>
     <div class="stat-label">STUDENTS GRADUATED</div>
@@ -72,167 +304,400 @@
     <div class="stat-label">DESIGN DEPARTMENT</div>
   </div>
     </section>
-    <!-- Programs Section -->
-<section class="programs-sec">
-  <div class="programs-container">
- <div class="text-container">
-  <!-- Heading -->
-  <h2 class="text-heading programs-text">
-    <span class="black-text">Explore</span>
-    <span class="text-gradient">Our Programs</span> <br>
-    <span class="black-text">and Courses</span><br>
-  </h2>
-  <p class="text-subtitle">
-    From national talent showcases to hands-on industry exposure, our students shine as creative leaders
-    ready to conquer the design world.
+   
+</section>
+
+<script>
+// Scroll animation for stats-section and accredited logos
+const scrollElements = document.querySelectorAll('.stats-section .stat-item, .accredited .logo-row img');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      
+      // Count-up for stat numbers
+      if(entry.target.classList.contains('stat-item')) {
+        const number = entry.target.querySelector('.stat-number');
+        const target = +number.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 200;
+        const updateCount = () => {
+          count += increment;
+          if(count < target){
+            number.innerText = Math.ceil(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            number.innerText = target;
+          }
+        }
+        updateCount();
+      }
+    }
+  });
+}, { threshold: 0.2 });
+
+scrollElements.forEach(el => observer.observe(el));
+</script>
+
+<style>
+/* Fade-in + slide-up effect for stats and logos */
+.stats-section .stat-item,
+.accredited .logo-row img {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.stats-section .stat-item.visible,
+.accredited .logo-row img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: make logos pop up slightly when visible */
+.accredited .logo-row img.visible {
+  transform: translateY(0) scale(1.05);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+</style>
+
+<!-- Our Services Section -->
+<section class="services" style="background-color: #161616;">
+ <div class="section-title">
+   <h2 class=" reveal-text" >
+        Explore <span>Our Programs</span> and Courses
+      </h2>
+  <p>
+   Explore our diverse range of design programs aimed at inspiring creativity and preparing you for global success.
   </p>
 </div>
 
 <style>
-  .text-sec {
-    padding: 50px 0;
-  }
-
-  .text-heading {
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 20px;
-  }
-@media (max-width:768px) {
-  .text-heading {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 20px;
-  }
-  .text-subtitle::before {
-    display: none;
-  }
-   .text-subtitle {
-    font-size: 16px;
-    color: #333;
-    position: relative;
-    padding-left: 5px !important;
-    margin-bottom: 30px;
-    max-width: 700px;
-    text-align: center;
-  }
-   .text-subtitle {
-    text-align: center;
-  }
+.section-title {
+  text-align: center;
+  margin: 100px 0;
 }
-  .black-text {
-    color: #000; /* normal black text */
-  }
 
-  .text-gradient {
-    background: linear-gradient(90deg, #c71d37, #2a4d9b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+/* --- Overlay setup --- */
+.reveal-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
 
-  .text-subtitle {
-    font-size: 18px;
-    color: #333;
-    position: relative;
-    padding-left: 55px;
-    margin-bottom: 30px;
-    max-width: 700px;
-  }
+.reveal-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #D1313E 0%, #364D8D 100%);
+  z-index: 2;
+  transition: left 0.7s ease;
+}
 
-  .text-subtitle::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 2px;
-    background: #c71d37;
-  }
+.reveal-text.active::before {
+  left: 100%;
+}
 </style>
 
-    <div class="programs-grid">
-      <!-- Card 1 -->
-      <div class="program-card">
-        <img class="a1" src="assets/images/our program1.webp" alt="Fashion Design">
-        <div class="a1overlay  overlay">
-          <p>With creativity and flair, create timeless styles and innovative designs.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Fashion Design</h3>
-      </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
 
-      <!-- Card 2 -->
-      <div class="program-card">
-        <img class="a2"  src="assets/images/our program2.webp" alt="Interior Design">
-        <div class="a2overlay  overlay">
-          <p>Transform spaces into stunning environments, blending aesthetics with functionality in every project.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Interior Design</h3>
-      </div>
+          // Reset overlay after animation (so it can replay on scroll again)
+          setTimeout(() => {
+            entry.target.classList.remove("active");
+          }, 4000); 
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-      <!-- Card 3 -->
-      <div class="program-card">
-        <img class="a3" src="assets/images/our program3" alt="Graphic Design">
-        <div class="a3overlay  overlay">
-          <p>Bring your visual storytelling skills to life by creating designs that captivate and communicate.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Graphic Design</h3>
-      </div>
-      <div class="program-card">
-        <img class="a4" src="assets/images/our program4.webp" alt="Graphic Design">
-        <div class="a4overlay  overlay">
-          <p>Bring characters to life and tell stories through the dynamic world of animation and visual effects.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Animation</h3>
-      </div>
-      <div class="program-card">
-        <img class="a5" src="assets/images/our program5.webp" alt="Graphic Design">
-        <div class="a5overlay  overlay">
-          <p>Sculpt elegance and luxury, crafting exquisite pieces that blend tradition with contemporary style.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Jewellery Design</h3>
-      </div>
-      <div class="program-card">
-        <img class="a6" src="assets/images/our program6.webp" alt="Graphic Design">
-        <div class="a6overlay  overlay">
-          <p>Design intuitive and engaging digital experiences, enhancing user interaction with cutting-edge creativity.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>
+  document.querySelectorAll(".reveal-text").forEach((el) =>
+    observer.observe(el)
+  );
+});
+</script>
 
-UI / UX
-</h3>
-      </div>
-      <div class="program-card program-card7 " style="visibility: hidden;">
-        <img class="a7" src="assets/images/our program6.webp" alt="Graphic Design">
-        <div class="a7overlay  overlay">
-          <p>Bring ideas to life through stunning visuals and graphics.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Graphic Design</h3>
-      </div>
-      <div class="program-card" >
-        <img class="8" src="assets/images/our program7" alt="Graphic Design">
-        <div class="a8overlay overlay" >
-          <p>Weave innovation into fabrics, creating patterns and textures that set trends in fashion and interiors.</p>
-          <a href="#">Know More</a>
-        </div>
-        <h3>Textile Design</h3>
-      </div>
+  <div class="service-container">
+    
+    <div class="service-box">
+      <img src="assets/images/our program1.webp" alt="New Installation">
+      <h3  style="color:#fff;">
+
+Fashion Design</h3>
+      <p  style="color:#cac6c6bd ;">With creativity and flair, create timeless  styles and innovative designs.</p>
+     
     </div>
+
+    <div class="service-box">
+      <img src="assets/images/our program2.webp" alt="Maintenance Contract">
+      <h3  style="color:#fff ;">Interior Design</h3>
+      <p  style="color:#cac6c6bd ;">Transform spaces into stunning environments, blending aesthetics with functionality in every project.</p>
+
+    </div>
+
+    <div class="service-box">
+      <img src="assets/images/our program3" alt="Modification">
+      <h3  style="color:#fff ;">Graphic Design</h3>
+      <p  style="color:#cac6c6bd ;">Bring your visual storytelling skills to life by creating designs that captivate and communicate.</p>
+
+    </div>
+
+    <div class="service-box ">
+      <img src="assets/images/our program4.webp" alt="Repair & Service">
+      <h3 style="color:#fff ;">Animation</h3>
+      <p style="color:#cac6c6bd ;">Bring characters to life and tell stories through the dynamic world of animation and visual effects.</p>
+      
+    </div>
+    <div class="service-box ">
+      <img src="assets/images/our program5.webp" alt="Repair & Service">
+      <h3 style="color:#fff ;">Jewellery Design</h3>
+      <p style="color:#cac6c6bd ;">Sculpt elegance and luxury, crafting exquisite pieces that blend tradition with contemporary style.</p>
+      
+    </div>
+    <div class="service-box ">
+      <img src="assets/images/our program6.webp" alt="Repair & Service">
+      <h3 style="color:#fff ;">UI/UX Design</h3>
+      <p style="color:#cac6c6bd ;">Design intuitive and engaging digital experiences, enhancing user interaction with cutting-edge creativity.</p>
+      
+
+    </div>
+    <div class="service-box ">
+      <img src="assets/images/our program7" alt="Repair & Service">
+      <h3 style="color:#fff ;">Textile Design</h3>
+      <p style="color:#cac6c6bd ;">Weave innovation into fabrics, creating patterns and textures that set trends in fashion and interiors.</p>
+     
+    </div>
+ 
   </div>
+   <div class="gallery-controls">
+          <button id="viewServices" class="view-more-btn cta-btn" type="button">View more</button>
+        </div>
 </section>
+<style>
+  /* Our Services Section */
+.services {
+  text-align: center;
+  padding: 60px 100px;
+  background: #fff;
+}
+@media (max-width:768px) {
+  .services {
+
+  padding: 10px;
+}
+
+}
+.animate-left, .animate-right {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.animate-left {
+  transform: translateX(-100px);
+}
+
+.animate-right {
+  transform: translateX(100px);
+}
+
+.animate-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.services h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #222;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Smooth transition */
+.service-box {
+  background: #2b2a2a34;
+  color: #fff !important;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.service-box h3,
+.service-box p,
+.service-box a {
+  transition: all 0.4s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover Effect */
+.service-box:hover {
+  background: #364d8d;
+  color: #fff;
+border: 3px solid;
+  border-image: linear-gradient(90deg, #D1313E 0%, #364D8D 100%);
+  border-image-slice: 1; 
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.service-box:hover h3,
+.service-box:hover p,
+.service-box:hover a {
+  color: #fff;
+}
+.service-box a {
+ color: #fff !important;
+ background-color: transparent;
+ font-weight: 300 !important;
+ border: 1px solid #fff;
+ padding: 10px;
+ border-radius: 10px;
+}
+
+.service-box:hover a {
+ background: linear-gradient(90deg, #D1313E 20%, #364D8D 40%);
+}
+
+.service-box img {
+  width: 100%;
+height: 300px;
+padding: 1px;
+  object-fit: cover;
+}
+
+.service-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  color: #222;
+}
+
+.service-box p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 15px;
+  line-height: 1.6;
+  min-height: 120px;
+}
+
+.service-box a {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #002b4f;
+  text-decoration: none;
+}
 
 
-    <!-- NATURE SECTION -->
-   <section class="sec4" style="padding: 50px 20;">
+
+.service-box.dark h3,
+.service-box.dark p,
+.service-box.dark a {
+  color: #fff;
+}
+
+/* Hover Effect */
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+</style>
+<script>
+// SERVICES: View more toggle
+(function () {
+  const btn = document.getElementById('viewServices');
+  if (!btn) return;
+
+  const boxes = Array.from(document.querySelectorAll('.service-box'));
+  let expanded = false;
+
+  // Sirf 4 boxes dikhana
+  function setInitialVisibility() {
+    boxes.forEach((el, i) => {
+      if (i < 4) {
+        el.style.display = "block";
+      } else {
+        el.style.display = "none";
+      }
+    });
+    btn.textContent = 'View More';
+    expanded = false;
+  }
+
+  setInitialVisibility();
+
+  // Toggle function
+  function toggle() {
+    expanded = !expanded;
+    if (expanded) {
+      boxes.forEach(el => el.style.display = "block");
+      btn.textContent = 'View Less';
+    } else {
+      setInitialVisibility();
+    }
+  }
+
+  btn.addEventListener('click', toggle);
+})();
+</script>
+<script>
+// Scroll animation for service boxes
+const serviceBoxes = document.querySelectorAll('.service-box');
+
+const observerServices = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+serviceBoxes.forEach(box => observerServices.observe(box));
+</script>
+
+<style>
+/* Fade-in + slide-up effect for service boxes */
+.service-box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.service-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+
+<!-- NATURE SECTION -->
+<section class="sec4" style="padding: 50px 100px; background-color: #111111;">
   <div class="container">
     <div class="sec4-wrapper">
       <div class="sec4-img">
@@ -255,303 +720,1084 @@ UI / UX
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-sec" style="padding: 50px 0; background: #fff;">
-  <div class="gallery-container">
-    <!-- Heading -->
-    <h2 class="gallery-heading">
-      We don’t just Teach, We make our Students 
-      <span class="gallery-gradient">Industry- <br> Ready</span>
-    </h2>
-    <p class="gallery-subtitle">
-      From national talent showcases to hands-on industry exposure, our students shine as creative leaders <br> ready to conquer the design world.
-    </p>
-
-    
-
-    <!-- Image Grid / Slider -->
-    <div class="gallery-grid">
-      <img src="assets/images/gal1.webp" alt="">
-      <img src="assets/images/gal2.webp" alt="">
-      <img src="assets/images/gal3.webp" alt="">
-      <img src="assets/images/gal4.webp" alt="">
-      <img src="assets/images/gal5.webp" alt="">
-      <img src="assets/images/gal9.webp" alt="">
-      <img src="assets/images/gal10.webp" alt="">
-      <img src="assets/images/gal1.webp" alt="">
-      <img src="assets/images/gal8.webp" alt="">
-      <img src="assets/images/gal7.webp" alt="">
-     
-    </div>
-
-    <!-- Arrows (visible only on mobile) -->
-    <div class="gallery-arrows">
-      <button class="gallery-arrow left">❮</button>
-      <button class="gallery-arrow right">❯</button>
-    </div>
-  </div>
-</section>
 
 
-
-
-
-
-<script>
-  const slider = document.getElementById('spotlightSlider');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-
-  nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
-  });
-
-  prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
-  });
-</script>
-
-<!-- INSD Spotlight Section -->
-<section class="insd-spotlight">
-        <div class="text-container">
-  <!-- Heading -->
-  <h2 class="text-heading programs-text">
-    <span class="black-text">Explore</span>
-    <span class="text-gradient">Our Programs</span> <br>
-    <span class="black-text">and Courses</span><br>
-  </h2>
-  <p class="text-subtitle">
-    From national talent showcases to hands-on industry exposure, our students shine as creative leaders
-    ready to conquer the design world.
-  </p>
-</div>
-  <div class="insd-slider-container">
-    <div class="insd-slider" id="insdSlider">
-      <div class="insd-card">
-        <img src="assets/images/Group-146.webp" alt="The Hindu">
-      </div>
-      <div class="insd-card">
-        <img src="assets/images/Group-145.webp" alt="The Indian Express">
-      </div>
-      <div class="insd-card">
-        <img src="assets/images/Group-141-1.webp" alt="The Times of India">
-      </div>
-      <div class="insd-card">
-        <img src="assets/images/Group-142-1.webp" alt="Hindustan Times">
-      </div>
-      <div class="insd-card">
-        <img src="assets/images/Group-143-1.webp" alt="Hindustan Times">
-      </div>
-      <div class="insd-card">
-        <img src="assets/images/Group-144-1.webp" alt="Hindustan Times">
-      </div>
-    </div>
-  </div>
-
-  <div class="insd-slider-controls">
-    <button class="insd-btn" onclick="insdSlide(-1)">←</button>
-    <button class="insd-btn" onclick="insdSlide(1)">→</button>
-  </div>
-</section>
-
-
-
-<script>
-  const insdSlider = document.getElementById("insdSlider");
-
-  function insdSlide(direction) {
-    let cardWidth = document.querySelector(".insd-card").offsetWidth + 20; // card + gap
-    insdSlider.scrollBy({
-      left: direction * cardWidth * 4, // ek bar me 4 card slide
-      behavior: "smooth"
-    });
-  }
-</script>
-
-
-  <section class="sec7">
-  <div class="container1">
-    
-    <!-- Left Content -->
-    <div class="sec7-content" style="padding: 50px 20px;">
-      <h2 class="programs-text">
-        <span class="insd-gradient">INSD Across India: </span>
-        <span class="black-text">A Visual Journey</span>
+<section class="testimonial-slider">
+  <!-- Left side mein text + small images -->
+  <div class="slider-left">
+    <div class="section-title revea">
+      <h2 class=" reveal-text" style=" color: white;">
+       Our <span>Gallery</span>
       </h2>
       <p>
-        Explore the vibrant campuses of INSD across India! Each center is a hub of creativity, 
-        offering state-of-the-art facilities, cutting-edge technology, and an inspiring environment.
-        <br><br>
-        Our campuses are located PAN India, from bustling metropolises to tranquil locales, 
-        providing the perfect balance of tradition and innovation, nurturing the next generation of design leaders.
+     From national talent showcases to hands-on industry exposure, our students shine as creative leaders ready to conquer the design world.
       </p>
-      <button class="apply-btn">Apply Now</button>
     </div>
 
-    <!-- Right Image -->
-    <div class="sec7-image">
-      <img src="assets/images/map1.gif" alt="INSD India Map">
+    <!-- छोटी images side by side -->
+    <div class="small-images">
+      <img src="assets/images/gal1.webp" alt="Small 1">
+      <img src="assets/images/gal2.webp" alt="Small 2">
+      <img src="assets/images/gal3.webp" alt="Small 3">
     </div>
+  </div>
 
+  <!-- बड़ी main image -->
+  <div class="big-image">
+    <img src="assets/images/gal4.webp" alt="Big">
   </div>
 </section>
 
-  <section class="awards-section">
-    <div class="awards-text" >
-        <h2 style="font-size: 50px;">Our Crowning Achievements</h2>
-        <p style="font-size: 20px;">
-            From national talent showcases to hands-on industry exposure, our students shine as creative leaders ready to conquer the design world.
-        </p>
-    </div>
+<style>
+  .testimonial-slider {
+    padding: 50px 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    background: #161616;
+    color: #fff;
+  }
 
-    <div class="awards-gallery">
-        <div class="awards-slider">
-            <img src="assets/images/certificate1.webp" alt="Award 1">
-            <img src="assets/images/certificate2.webp" alt="Award 2">
-            <img src="assets/images/certificate3.webp" alt="Award 3">
-            <img src="assets/images/certificate4.webp" alt="Award 4">
-            <img style="visibility: hidden;" src="assets/images/certificate1.webp" alt="Award 5">
-            <img src="assets/images/certficate4.webp" alt="Award 6">
-            <img src="assets/images/certificate6.webp" alt="Award 6">
-            <img style="visibility: hidden;" src="assets/images/certificate1.webp" alt="Award 6">
-        </div>
-        <button class="nav-arrow arrow-left">&#10094;</button>
-        <button class="nav-arrow arrow-right">&#10095;</button>
-    </div>
-</section>
+  /* Left part => text + small images ek column */
+  .slider-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+  }
 
+  /* छोटी images row में */
+  .small-images {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 
-<section class="sec8">
-  
-  <!-- Top Content Row -->
-  <div class="content">
-    <h2>Making Global Aspirations<br>Come True!</h2>
-    <p>
-      At INSD, we turn your global aspirations into tangible realities.
-      We offer a unique opportunity to immerse yourself in the heart of the
-      world's design capital, where creativity, innovation, and industry
-      connections converge.
-    </p>
-  </div>
+  .small-images img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: -6%;
+    opacity: 0.7;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
 
-  <!-- Image Row -->
-  <div class="image-row">
-    <div class="left-col">
-      <div><img src="assets/images/GLO1.png" alt=""></div>
-      <div><img src="assets/images/GLO2.webp" alt=""></div>
-      <div><img src="assets/images/GLO3.webp" alt=""></div>
-      <div><img src="assets/images/GLOW4.webp" alt=""></div>
-    </div>
+  .small-images img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 
-    <div class="right-col">
-      <img src="assets/images/GLOW5.webp" alt="">
-    </div>
-  </div>
+  /* बड़ी image */
+  .big-image {
+    position: relative;
+    overflow: hidden;
+    width: 450px;
+    height: 510px;
+    border-radius: 5px;
+  }
 
-</section>
+  .big-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
 
+  /* Animate class apply hone par */
+  .big-image img.slide-left {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
 
-
-
-<!-- INSD Brand Section -->
-<section class="insd-brand">
-   <div class="text-container">
-  <!-- Heading -->
-  <h2 class="text-heading programs-text" style="text-align: start;">
-
-    <span class="text-gradient">Our Students </span> 
-    <span class="black-text">Are Our
-Brand</span><br>
-  </h2>
-  <p class="text-subtitle">
-    Our students are the heart of INSD. Their success stories, creativity, and achievements define our legacy, making them the true ambassadors of our brand.
-  </p>
-</div>
-  <div class="insd-brand-slider-container">
-    <div class="insd-brand-slider" id="insdBrandSlider">
-      <div class="insd-brand-card">
-        <img src="assets/images/Rectangle-69.png" alt="Brand 1">
-      </div>
-      <div class="insd-brand-card">
-        <img src="assets/images/Rectangle-70.png" alt="Brand 2">
-      </div>
-      <div class="insd-brand-card">
-        <img src="assets/images/Rectangle-71.png" alt="Brand 3">
-      </div>
-    </div>
-  </div>
-
-  <div class="insd-brand-controls">
-    <button class="insd-brand-btn" onclick="insdBrandSlide(-1)">←</button>
-    <button class="insd-brand-btn" onclick="insdBrandSlide(1)">→</button>
-  </div>
-</section>
-
-
+  .big-image img.slide-right {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+</style>
 
 <script>
-  const insdBrandSlider = document.getElementById("insdBrandSlider");
+const smallImages = document.querySelectorAll(".small-images img");
+const bigImage = document.querySelector(".big-image img");
 
-  function insdBrandSlide(direction) {
-    let cardWidth = document.querySelector(".insd-brand-card").offsetWidth + 20;
-    insdBrandSlider.scrollBy({
-      left: direction * cardWidth,
-      behavior: "smooth"
-    });
-  }
+let index = 0;
+
+const testimonials = [
+  { img: "assets/images/gal1.webp" },
+  { img: "assets/images/gal2.webp" },
+  { img: "assets/images/gal3.webp" },
+  { img: "assets/images/gal4.webp" },
+  { img: "assets/images/gal5.webp" },
+  { img: "assets/images/gal6.webp" },
+  { img: "assets/images/gal7.webp" },
+  { img: "assets/images/gal8.webp" },
+  { img: "assets/images/gal9.webp" }
+];
+
+// Auto slider function
+function showNext() {
+  const direction = Math.random() > 0.5 ? "slide-left" : "slide-right"; // random direction
+
+  // Remove existing animation classes
+  bigImage.classList.remove("slide-left", "slide-right");
+
+  // Force reflow (browser ko dubara calculate karne pe majboor karega)
+  void bigImage.offsetWidth;
+
+  // Add new animation class
+  bigImage.classList.add(direction);
+
+  // Wait for animation to finish then change src
+  setTimeout(() => {
+    index = (index + 1) % testimonials.length;
+    bigImage.src = testimonials[index].img;
+
+    // Reset for smooth transition back
+    bigImage.classList.remove("slide-left", "slide-right");
+  }, 600);
+
+  // छोटी images update
+  smallImages.forEach((img, i) => {
+    let nextIndex = (index + i + 1) % testimonials.length;
+    img.src = testimonials[nextIndex].img;
+  });
+}
+
+// Auto play every 2 sec
+setInterval(showNext, 2000);
+
+// छोटी image पर click करने का logic
+smallImages.forEach(img => {
+  img.addEventListener("click", () => {
+    bigImage.src = img.src;  // क्लिक की गई image बड़ी image में दिखेगी
+  });
+});
 </script>
 
 
-<section class="Career"> 
-  <div class="Career-text">
-    <h2 style="margin-bottom: 40px; margin-top: 40px;">
-      <span class="black-text">Career
-          </span>
-        <span class="insd-gradient"> Opportunities</span>
-        
-      </h2>
-        <p >
-       Your passion can become your profession! Thousands of INSD students have secured careers with industry giants - <br> we can help you reach the top.
+<style>
+  @keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-slider img {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.testimonial-slider img.visible {
+  animation: slideUpFade 0.8s ease-in-out forwards;
+}
+
+.sec4 .sec4-img,
+.sec4 .sec4-text {
+  opacity: 0;
+  transform: translateY(-60px); /* top se aane ka effect */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.sec4 .sec4-img.visible,
+.sec4 .sec4-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".testimonial-slider img");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(images).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 300); // 300ms gap ek-ek karke
+      }
+    });
+  }, { threshold: 0.3 });
+
+  images.forEach(img => observer.observe(img));
+});
+
+// Scroll animation with smoother sequential effect
+const sec4Items = document.querySelectorAll('.sec4 .sec4-img, .sec4 .sec4-text');
+
+const observerSec4 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+      // sequential delay
+      const index = Array.from(sec4Items).indexOf(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 400); // 400ms gap between elements
+    }
+  });
+}, { threshold: 0.3 });
+
+sec4Items.forEach(item => observerSec4.observe(item));
+</script>
+
+ 
+
+<section class="portfolio-section">
+  <div class="section-title">
+  <h2 class="reveal-text">
+    Our Crowning <span>Achievements</span>
+  </h2>
+  <p>
+   From national talent showcases to hands-on industry exposure, our students shine as creative leaders ready to conquer the design world.
+  </p>
+</div>
+  <div class="portfolio-container portfolio-slider">
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certificate1.webp" alt="Zazza Social Media App">
+        <div class="play-icon">&#9658;</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certificate2.webp" alt="Ladaii Marketing Add">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certificate3.webp" alt="IPL Ceremony Program">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certificate4.webp" alt="Hestings Dance Club">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certficate4.webp" alt="Marvel Universe Movie">
+        <div class="play-icon">&#9658;</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/certificate6.webp" alt="Alex Dehz Halka Song">
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider buttons for mobile -->
+  <button class="slider-prev">&#10094;</button>
+  <button class="slider-next">&#10095;</button>
+</section>
+
+<style>
+.portfolio-section {
+  padding: 50px 100px;
+  background-color: #111;
+  position: relative;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-card {
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* Slider Buttons */
+.slider-prev,
+.slider-next {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-prev { left: 10px; }
+.slider-next { right: 10px; }
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.portfolio-card.visible {
+  animation: fadeUp 0.8s ease-in-out forwards;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .portfolio-section {
+  padding: 10px;
+}
+
+  .portfolio-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+
+  .slider-prev,
+  .slider-next {
+    display: block;
+  }
+}
+.portfolio-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.portfolio-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".portfolio-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(cards).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 100); // delay har card ke liye
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+const slider = document.querySelector('.portfolio-slider');
+const nextBtn = document.querySelector('.slider-next');
+const prevBtn = document.querySelector('.slider-prev');
+
+let scrollAmount = 0;
+const slideWidth = slider.querySelector('.portfolio-card').offsetWidth + 20; // 20 = gap
+
+nextBtn.addEventListener('click', () => {
+  slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+});
+</script>
+<section class="insd-section">
+  <div class="insd-container">
+    <!-- Left Content -->
+    <div class="insd-content reveal">
+      <h2 class="reveal-text"><span>INSD Across India:</span>  <br> A
+Visual Journey</h2>
+      <p>
+        Explore the vibrant campuses of INSD across India! Each center is a hub of creativity, 
+        offering state-of-the-art facilities, cutting-edge technology, and an inspiring environment. 
+        <br><br>
+        Our campuses are located in PAN India, from bustling metropolises to tranquil locales, 
+        providing the perfect balance of tradition and innovation, nurturing the next generation 
+        of design leaders.
       </p>
-    </div> 
-    <div class="Career-gallery"> 
-      <div class="Career-slider">
-         <img src="assets/images/career1.webp" alt="Award 1"> 
-         <img src="assets/images/Rectangle-84.webp" alt="Award 2">
-          <img src="assets/images/career2.webp" alt="Award 3"> 
-          <img src="assets/images/career3.webp" alt="Award 4">
-           <img src="assets/images/career4.webp" alt="Award 1"> 
-         <img src="assets/images/career5.webp" alt="Award 2">
-          <img src="assets/images/career6.webp" alt="Award 3"> 
-          <img src="assets/images/career7.webp" alt="Award 4">
-           <img src="assets/images/career8.webp" alt="Award 1"> 
-         <img src="assets/images/career9.webp" alt="Award 2">
-          <img src="assets/images/career10.webp" alt="Award 3"> 
-          <img src="assets/images/career11.webp" alt="Award 4">
-          <img src="assets/images/career13.webp" alt="Award 4">
-          <img src="assets/images/career14.webp" alt="Award 4">
-          <img src="assets/images/career15.webp" alt="Award 4">
-         </div> 
-         </div>
-         </section>
+      <a href="#" class="btn">Apply Now</a>
+    </div>
 
-  
-<section class="partnership"> 
-  <div class="partnership-text">
-    <h2 style="margin-bottom: -40px; margin-top: 40px;">
-      <span class="black-text">INSD International  </span>
-        <span class="insd-gradient"> Partnerships</span>
-        
-      </h2>
-    </div> 
-    <div class="partnership-gallery"> 
-      <div class="partnership-slider">
-         <img src="assets/images/card1.webp" alt="Award 1"> 
-         <img src="assets/images/card2.webp" alt="Award 2">
-          <img src="assets/images/card3.webp" alt="Award 3"> 
-          <img src="assets/images/card4.webp" alt="Award 4"> </div> </div> </section>
+    <!-- Right Map -->
+    <div class="insd-map reveal">
+      <img src="assets/images/map.gif" alt="INSD Map">
+    </div>
+  </div>
+</section>
 
-          <!-- FOOTER SECTION -->
+<style>
+.insd-section {
+  width: 100%;
+  padding: 50px 100px;
+  overflow: hidden; /* prevent scrollbar jump */
+}
+
+.insd-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.insd-content {
+  flex: 1;
+  background: #000;
+  color: #fff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.insd-content.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.insd-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.insd-content h2 span {
+  background: linear-gradient(90deg, #D1313E 20%, #364D8D 40%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+
+.insd-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #c7bebe;
+}
+
+.insd-content .btn {
+  display: inline-block;
+  padding: 12px 12px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: 0.3s;
+  text-align: center;
+  margin-top: 40px !important;
+}
+.insd-content .btn:hover {
+  background: linear-gradient(90deg, #D1313E 20%, #364D8D 40%);
+  color: #fff;
+}
+
+.insd-map {
+  flex: 1;
+  background: #ffffffd3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.insd-map.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.insd-map img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insd-container {
+    flex-direction: column;
+  }
+  .insd-content, .insd-map {
+    flex: 100%;
+    padding: 30px;
+  }
+}
+</style>
+
+<script>
+// Scroll reveal for ease-in/out
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll); // for refresh
+</script>
+
+
+<!-- aspiration -->
+ <section class="student-section" style="background-color: #111111;">
+  <!-- Section Title -->
+<div class="section-title">
+  <h2 class="reveal-text" style="font-size: 3 rem !important;">
+    Making Global  <span>Aspirations</span>Come True!
+  </h2>
+  <p>
+At INSD, we turn your global aspirations into tangible realities. We offer a unique opportunity to immerse yourself in the heart of the world's design capital, where creativity, innovation, and industry connections converge.
+  </p>
+</div>
+
+<style>
+.section-title {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 900px;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.section-title h2 span {
+    font-size: 3.4rem;
+  background: linear-gradient(90deg, #D1313E 20%, #364D8D 40%);
+  -webkit-background-clip: text;   /* Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* Transparent text */
+  background-clip: text; 
+  color: transparent; /* fallback */
+  font-weight: 700;
+     font-family: 'Montserrat', sans-serif;
+}
+
+.section-title p {
+  font-size: 20px;
+  color: #c7bebe;
+  line-height: 1.6;
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+</style>
+ <section class="image-grid-section" >
+  <div class="image-grid-container">
+    <!-- Left Column -->
+    <div class="image-col left">
+      <img src="assets/images/GLO1.png" alt="Image 1">
+      <img src="assets/images/GLO2.webp" alt="Image 2">
+    </div>
+
+    <!-- Center Column (Big Image) -->
+    <div class="image-col center-img">
+      <img src="assets/images/GLOW5.webp" alt="Center Image">
+    </div>
+
+    <!-- Right Column -->
+    <div class="image-col right">
+      <img src="assets/images/GLO3.webp" alt="Image 3">
+      <img src="assets/images/GLOW4.webp" alt="Image 4">
+    </div>
+  </div>
+</section>
+
+<style>
+.image-grid-container {
+  padding: 50px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-col img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0; /* start hidden */
+}
+
+.center-img img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInCenter {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Active state jab scroll me aaye */
+.animate .left img {
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+.animate .left img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.animate .right img {
+  animation: slideInRight 1s ease-in-out forwards;
+}
+.animate .right img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.animate .center-img img {
+  animation: fadeInCenter 1.2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .image-grid-container {
+    grid-template-columns: 1fr;
+  }
+  .image-col img,
+  .center-img img {
+    height: auto;
+  }
+}
+</style>
+
+<script>
+  // Intersection Observer for scroll + refresh
+  const section = document.querySelector('.image-grid-section');
+
+  const obsever = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        section.classList.add('animate'); // animation trigger
+      }
+    });
+  }, { threshold: 0.3 });
+
+  obsever.observe(section);
+</script>
+
+<section class="portfolio-section" style="background-color: #161616;"  >
+  <div class="section-title">
+  <h2 class="reveal-text" style="font-size: 3 rem !important;">
+    INSD in  <span> Spotlight</span>
+  </h2>
+  <p>
+    Your passion can become your profession! Thousands of INSD students have secured careers with industry giants – we can help you reach the top.
+  </p>
+</div>
+  <div class="portfolio-container portfolio-slider">
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-141-1.webp" alt="Zazza Social Media App">
+        <div class="play-icon">&#9658;</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-142-1.webp" alt="Ladaii Marketing Add">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-143-1.webp" alt="IPL Ceremony Program">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-144.webp" alt="Hestings Dance Club">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-145.webp" alt="Marvel Universe Movie">
+        <div class="play-icon">&#9658;</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="image-container">
+        <img src="assets/images/Group-146.webp" alt="Alex Dehz Halka Song">
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider buttons for mobile -->
+  <button class="slider-prev">&#10094;</button>
+  <button class="slider-next">&#10095;</button>
+</section>
+<section class="work-section reveal" style="background-color: #111111">
+  <div class="container">
+    
+    <!-- Left Content -->
+    <div class="work-content reveal">
+      <div class="section-title">
+        <h2 class="reveal-text"style="font-size: 3 rem !important;">
+          <span>Our Students </span> Are Our
+Brand
+        </h2>
+        <p>
+    Our students are the heart of INSD. Their success stories, creativity, and achievements define our legacy, making them the true ambassadors of our brand.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Big Image -->
+    <div class="work-images reveal">
+      <div class="img-box tall">
+        <img src="assets/images/Rectangle-69.png" alt="Image1" />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Two Images -->
+  <div class="bottom-images reveal">
+    <div class="img-box">
+      <img src="assets/images/Rectangle-70 (1).png" alt="Image2" />
+    </div>
+    <div class="img-box">
+      <img src="assets/images/Rectangle-71.png" alt="Image3" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Scroll Reveal CSS */
+.reveal {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.reveal.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Section Base */
+.work-section {
+  padding: 80px 100px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.work-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left Side Content */
+.work-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+
+
+
+/* Right Big Image */
+.work-images {
+  flex: 1;
+  min-width: 320px;
+}
+
+.work-images .img-box {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.work-images .tall {
+  height: 400px;
+}
+
+.work-images .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom Images */
+.bottom-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.bottom-images .img-box {
+  flex: 0 1 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bottom-images .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 998px) {
+  .work-section {
+    padding: 50px 30px;
+  }
+  .work-section .container {
+    flex-direction: column;
+  }
+  .work-images .tall {
+    height: 220px;
+  }
+  .bottom-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bottom-images .img-box {
+    width: 800%;
+    max-width: 500px;
+  }
+}
+</style>
+<script>
+  // Scroll Reveal JS
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll); // for refresh
+
+</script>
+
+<section class="trusted-section reveal" style="background-color: #161616;" >
+
+  <div class="swiper logoSwiper">
+     <div class="section-title" style="margin-bottom: -5%;">
+        <h2 class="reveal-text">
+      Career  <span> Opportunities</span>
+        </h2>
+        <p>
+        Your passion can become your profession! Thousands of INSD students have secured careers with industry giants - we can help you reach the top.
+      </div>
+    <div class="swiper-wrapper" style="margin-bottom: -20%;">
+      <!-- 8 logos -->
+      <div class="swiper-slide"><img src="assets/images/career1.webp" alt="logo1"></div>
+      <div class="swiper-slide"><img src="assets/images/career2.webp" alt="logo2"></div>
+      <div class="swiper-slide"><img src="assets/images/career3.webp" alt="logo3"></div>
+      <div class="swiper-slide"><img src="assets/images/career4.webp" alt="logo4"></div>
+      <div class="swiper-slide"><img src="assets/images/career5.webp" alt="logo5"></div>
+      <div class="swiper-slide"><img src="assets/images/career6.webp" alt="logo6"></div>
+      <div class="swiper-slide"><img src="assets/images/career7.webp" alt="logo7"></div>
+      <div class="swiper-slide"><img src="assets/images/career8.webp" alt="logo8"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.trusted-section {
+  padding: 0px 100px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.trusted-section.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.logoSwiper {
+  width: auto;
+  padding: 10px 0;
+}
+
+.logoSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSwiper img {
+  background-color: #fff;
+  margin-top: -100%;
+  height: 100px;
+  width: auto;
+  padding: 10px;
+  padding-top: -50%;
+  filter: grayscale(10%);
+  transition: filter 0.3s ease;
+}
+
+.logoSwiper img:hover {
+  filter: grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trusted-section {
+    padding: 10px 20px;
+  }
+}
+</style>
+
+<!-- Swiper CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: 5,
+    spaceBetween: 40,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: { slidesPerView: 2, spaceBetween: 20 },
+      640: { slidesPerView: 3, spaceBetween: 30 },
+      1024: { slidesPerView: 5, spaceBetween: 40 },
+    }
+  });
+
+  // Scroll reveal for ease-in/out
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 150;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
+
            <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -601,7 +1847,9 @@ Brand</span><br>
 
       <div class="" style="display: flex; flex-direction: column;">
         <a href="#" class="btn-gradient" style="width: fit-content;">Apply Now</a>
-        <a href="#" class="btn-outline">Request a Prospectus</a>
+        <a href="#" class="btn-outline" style="width: fit-content;">Enquire Now</a>
+       
+
       </div>
     </div>
 
@@ -611,10 +1859,6 @@ Brand</span><br>
 <a href="#" class="back-to-top" id="backToTop">
   ⬆
 </a>
-<!-- Enquire Now Button -->
-<a href="#enquiry-form" class="enquire-btn">Enquire now</a>
-
-
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

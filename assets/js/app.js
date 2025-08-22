@@ -1,69 +1,4 @@
-// BANNER SCRIPT
-const desktopImages = [
-    "/assets/images/4.png",
-    "/assets/images/3.png",
-    "/assets/images/2.png",
-    "/assets/images/1.png"
-];
 
-const mobileImages = [
-    "/assets/images/mob4.png",
-    "/assets/images/mob3.png",
-    "/assets/images/mob2.png",
-    "/assets/images/mob1.png"
-    
-];
-
-let index = 0;
-let slideInterval;
-const section = document.querySelector(".sec1");
-const dotsContainer = document.querySelector(".dots");
-
-function getImages() {
-    return window.innerWidth <= 768 ? mobileImages : desktopImages;
-}
-
-function createDots(images) {
-    dotsContainer.innerHTML = "";
-    images.forEach((_, i) => {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => {
-            index = i;
-            changeSlide(true); // true = user clicked
-        });
-        dotsContainer.appendChild(dot);
-    });
-}
-
-function updateDots() {
-    document.querySelectorAll(".dots span").forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-    });
-}
-function changeSlide(isManual = false) {
-    const images = getImages();
-    section.style.backgroundImage = `url(${images[index]})`;
-    updateDots();
-    index = (index + 1) % images.length;
-
-    if (isManual) {
-        clearInterval(slideInterval);
-        startAutoSlide();
-    }
-}
-function startAutoSlide() {
-    slideInterval = setInterval(changeSlide, 4000);
-}
-createDots(getImages());
-changeSlide();
-startAutoSlide();
-window.addEventListener("resize", () => {
-    index = 0;
-    createDots(getImages());
-    changeSlide();
-});
-// HEADER SECTION
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('show');
 }
@@ -101,73 +36,93 @@ function toggleMenu() {
     }, { threshold: 0.5 });
 
     observer.observe(document.querySelector('.sec2'));
-    // GALLARY SECTION
-      const galleryGrid = document.querySelector('.gallery-grid');
-  const leftArrow = document.querySelector('.gallery-arrow.left');
-  const rightArrow = document.querySelector('.gallery-arrow.right');
-
-  rightArrow.addEventListener('click', () => {
-    galleryGrid.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  leftArrow.addEventListener('click', () => {
-    galleryGrid.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-//   AWARD SECTION
-
-    const awardsSlider = document.querySelector(".awards-slider");
-const nextAward = document.querySelector(".arrow-right");
-const prevAward = document.querySelector(".arrow-left");
-
-let awardIndex = 0;
-
-function showAwardSlide() {
-    awardsSlider.style.transform = `translateX(-${awardIndex * 100}%)`;
-}
-
-nextAward.addEventListener("click", () => {
-    awardIndex = (awardIndex + 1) % awardsSlider.children.length;
-    showAwardSlide();
-});
-
-prevAward.addEventListener("click", () => {
-    awardIndex = (awardIndex - 1 + awardsSlider.children.length) % awardsSlider.children.length;
-    showAwardSlide();
-});
-// Only for mobile slider smooth scroll
-document.querySelectorAll('.slider-container1').forEach(slider => {
-  slider.addEventListener('wheel', e => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      slider.scrollBy({ left: e.deltaY < 0 ? -100 : 100, behavior: 'smooth' });
+    
+// GALLERY: View more toggle
+(function(){
+  const btn = document.getElementById('viewMoreBtn');
+  if(!btn) return;
+  const moreItems = Array.from(document.querySelectorAll('#galleryGrid .more-item'));
+  let expanded = false;
+  // Show 4 on mobile (<=768px): unhide one marked as mobile-default
+  function setInitialVisibility(){
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    moreItems.forEach(el => el.classList.add('is-hidden'));
+    if(isMobile){
+      const extra = document.querySelector('#galleryGrid .more-item.mobile-default');
+      if(extra) extra.classList.remove('is-hidden');
     }
-  });
-});
-// Only for mobile slider smooth scroll
-document.querySelectorAll('.slider-container1').forEach(slider => {
-  slider.addEventListener('wheel', e => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      slider.scrollBy({ left: e.deltaY < 0 ? -100 : 100, behavior: 'smooth' });
-    }
-  });
-});
-
-
-  // show/hide button on scroll
-  window.addEventListener("scroll", function () {
-    const backToTop = document.getElementById("backToTop");
-    if (window.scrollY > 200) {
-      backToTop.style.display = "block";
+    btn.textContent = 'View more';
+    expanded = false;
+  }
+  setInitialVisibility();
+  window.addEventListener('resize', setInitialVisibility);
+  function toggle(){
+    expanded = !expanded;
+    if(expanded){
+      moreItems.forEach(el => el.classList.remove('is-hidden'));
+      btn.textContent = 'View less';
     } else {
-      backToTop.style.display = "none";
+      setInitialVisibility();
+    }
+  }
+  btn.addEventListener('click', toggle);
+})();
+
+// GALLERY: lightbox zoom on overlay icon
+(function(){
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbClose = document.getElementById('lightboxClose');
+  if(!lb || !lbImg || !lbClose) return;
+
+  function open(src){
+    lbImg.src = src;
+    lb.classList.add('open');
+    document.body.classList.add('no-scroll');
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  }
+
+  document.getElementById('galleryGrid')?.addEventListener('click', (e)=>{
+    const icon = e.target.closest('.goverlay');
+    if(icon){
+      const img = icon.parentElement.querySelector('img');
+      if(img) open(img.src);
     }
   });
+  lbClose.addEventListener('click', close);
+  lb.addEventListener('click', (e)=>{ if(e.target === lb) close(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+})();
 
-  // smooth scroll to top
-  document.getElementById("backToTop").addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+// SERVICES: tab interactions update left image and overlay
+(function(){
+  const tabs = document.getElementById('servicesTabs');
+  const img = document.getElementById('serviceImg');
+  const title = document.getElementById('serviceTitle');
+  const desc = document.getElementById('serviceDesc');
+  if(!tabs || !img || !title || !desc) return;
+
+  tabs.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.service-tab');
+    if(!btn) return;
+    tabs.querySelectorAll('.service-tab').forEach(b=> b.classList.remove('active'));
+    btn.classList.add('active');
+    // crossfade image
+    img.classList.add('fade-out');
+    const newSrc = btn.getAttribute('data-img');
+    const temp = new Image();
+    temp.onload = ()=>{
+      img.src = newSrc;
+      img.classList.remove('fade-out');
+    };
+    temp.src = newSrc;
+    img.alt = btn.getAttribute('data-title');
+    title.textContent = btn.getAttribute('data-title');
+    desc.textContent = btn.getAttribute('data-desc');
+    const caption = document.getElementById('serviceCaption');
+    if(caption) caption.textContent = btn.getAttribute('data-title');
   });
-
+})();
